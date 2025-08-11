@@ -178,6 +178,12 @@ dialog {
   width: 100%;
   box-sizing: border-box;
 }
+.settings-dialog-form #version-info {
+  margin-top: 1em;
+  font-size: 0.9em;
+  color: #888;
+  text-align: right;
+}
 .bottom-controls {
   position: fixed;
   left: 0;

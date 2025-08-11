@@ -73,6 +73,20 @@ const periodEndDialog = document.getElementById('period-end-dialog');
 const periodEndMessage = document.getElementById('period-end-message');
 const periodEndOk = document.getElementById('period-end-ok');
 
+const versionInfo = document.getElementById('version-info');
+
+// Fetch version.txt and display in settings dialog
+if (versionInfo) {
+  fetch('version.txt', {cache: 'no-store'})
+    .then(r => r.ok ? r.text() : 'dev')
+    .then(ver => {
+      versionInfo.textContent = 'Versie: ' + ver.trim();
+    })
+    .catch(() => {
+      versionInfo.textContent = 'Versie: dev';
+    });
+}
+
 let settings = getSettings();
 let state = getState(settings);
 let mainInterval = null;
