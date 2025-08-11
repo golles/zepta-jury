@@ -1,0 +1,32 @@
+name: Deploy main
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code from GitHub
+        uses: actions/checkout@v4
+
+      - name: Deploy with FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          protocol: ${{secrets.PROTOCOL}}
+          server: ${{secrets.HOST}}
+          port: ${{secrets.PORT}}
+          username: ${{secrets.USER}}
+          password: ${{secrets.PASSWORD}}
