@@ -1,0 +1,237 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #f4af32;
+  color: #1b3e5f;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.header {
+  background: #1b3e5f;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 120px;
+  position: relative;
+}
+.logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+.title {
+  flex: 1;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #1b3e5f;
+  background: #f4af32;
+  margin: 0 1rem;
+  border-radius: 8px;
+  padding: 1rem 0;
+}
+.header-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  height: 120px;
+  justify-content: center;
+}
+.material-icons {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  padding: 0.3rem 0;
+}
+.ios-warning {
+  display: none;
+  background: #ffcc00;
+  color: #1b3e5f;
+  text-align: center;
+  padding: 0.7em 1em;
+  font-size: 1.1em;
+  font-weight: bold;
+  z-index: 1000;
+  border: 2px solid #d32f2f;
+}
+main#jury-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: calc(100vh - 100px);
+  max-height: calc(100vh - 100px);
+  padding: 1rem 0.5rem 0 0.5rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.period-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.2rem;
+  font-size: 1.5rem;
+}
+.clock-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.2rem;
+}
+.period-section label {
+  margin-right: 0.5rem;
+}
+#period-select {
+  font-size: 1.2rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #1b3e5f;
+}
+.main-clock {
+  background: #000;
+  color: #fff;
+  font-size: 4rem;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 16px;
+  padding: 1rem 3rem;
+  margin-bottom: 0.7rem;
+  min-width: 220px;
+  text-align: center;
+}
+.clock-buttons {
+  display: flex;
+  gap: 1rem;
+}
+.attack-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.attack-timer {
+  background: #000;
+  color: #fff;
+  font-size: 3rem;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 16px;
+  padding: 1rem 2.5rem;
+  margin-bottom: 0.7rem;
+  min-width: 160px;
+  text-align: center;
+}
+.attack-buttons {
+  display: flex;
+  gap: 1rem;
+}
+button {
+  background: #1b3e5f;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.7rem;
+  padding: 1.1rem 2.2rem;
+  margin: 0.4rem 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:active {
+  background: #16304a;
+}
+dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  max-width: 90vw;
+  max-height: 90vh;
+  background: #fff;
+  color: #1b3e5f;
+}
+.qr-code {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+.settings-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: flex-end;
+}
+.settings-dialog-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.settings-dialog-form input {
+  display: block;
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.bottom-controls {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  z-index: 1100;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #f4af32;
+  padding: 0.7rem 0.5rem 0.7rem 0.5rem;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+  gap: 0.7rem;
+}
+.bottom-controls button {
+  flex: 1 1 0;
+  min-width: 0;
+  font-size: 1.5rem;
+  padding: 1.1rem 0.5rem;
+  border-radius: 12px;
+  margin: 0 0.2rem;
+}
+@media (max-width: 600px) {
+  .header {
+    height: 88px;
+    padding: 0 0.5rem;
+  }
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+  .title {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+  .header-icons {
+    height: 88px;
+  }
+  .main-clock {
+    font-size: 3rem;
+    min-width: 150px;
+    padding: 0.7rem 1.5rem;
+  }
+  .attack-timer {
+    font-size: 2rem;
+    min-width: 100px;
+    padding: 0.7rem 1.5rem;
+  }
+  button {
+    font-size: 1.3rem;
+    padding: 0.8rem 1.5rem;
+  }
+  .bottom-controls button {
+    font-size: 1.1rem;
+    padding: 0.8rem 0.2rem;
+  }
+}

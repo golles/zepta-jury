@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Zepta Toernooi Jury</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <img src="assets/logo.png" alt="Logo" class="logo">
+    <h1 class="title">Zepta Toernooi Jury</h1>
+    <div class="header-icons">
+      <span class="material-icons" id="share-btn" title="Delen">share</span>
+      <span class="material-icons" id="settings-btn" title="Instellingen">settings</span>
+    </div>
+  </header>
+
+  <div id="ios-warning" class="ios-warning" style="display:none;">
+    Let op: Op iOS stopt de timer als het scherm vergrendelt of de app op de achtergrond staat.
+  </div>
+
+  <main id="jury-page">
+    <section class="period-section">
+      <label for="period-select">Periode</label>
+      <select id="period-select"></select>
+    </section>
+    <section class="clock-section">
+      <div class="main-clock" id="main-clock">08:00</div>
+    </section>
+    <section class="attack-section">
+      <div class="attack-timer" id="attack-timer">28</div>
+    </section>
+  <div class="bottom-controls">
+    <button id="reset-btn">Reset</button>
+    <button id="start-pause-btn">Start</button>
+    <button id="attack-btn">28s</button>
+    <button id="attack2-btn">18s</button>
+  </div>
+  </main>
+
+  <!-- Share Dialog -->
+  <dialog id="share-dialog">
+    <img src="assets/qr.png" alt="QR Code" class="qr-code">
+    <div class="settings-actions">
+      <button id="close-share">Sluiten</button>
+    </div>
+  </dialog>
+
+  <!-- Settings Dialog -->
+  <dialog id="settings-dialog">
+    <form id="settings-form" class="settings-dialog-form">
+      <h2>Instellingen</h2>
+      <label for="setting-periods">Perioden</label>
+      <input type="number" id="setting-periods" min="1" max="4" value="2">
+      <label for="setting-playtime">Speeltijd</label>
+      <input type="text" id="setting-playtime" pattern="\d{2}:\d{2}" value="08:00">
+      <label for="setting-attack">Balbezit tijd</label>
+      <input type="number" id="setting-attack" min="1" value="28">
+      <label for="setting-attack2">Tweede balbezit tijd</label>
+      <input type="number" id="setting-attack2" min="1" value="18">
+      <div class="settings-actions">
+        <button type="submit">Opslaan</button>
+        <button type="button" id="close-settings">Annuleren</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Period/Game Over Dialogs -->
+  <dialog id="period-end-dialog">
+    <div id="period-end-message"></div>
+    <button id="period-end-ok">OK</button>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
