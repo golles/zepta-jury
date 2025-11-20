@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code from GitHub
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Generate version.txt
         run: echo "$(date +'%d%m%y-%H%M')-$(git rev-parse --short HEAD)" > version.txt
